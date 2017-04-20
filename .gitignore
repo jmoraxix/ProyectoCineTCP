@@ -1,0 +1,13 @@
+*.class
+
+nbproject/private/
+build/
+dist/
+
+/build/
+/dist/
+/nbproject/private/
+
+#Sublime files
+*.sublime-workspace
+*.sublime-project
