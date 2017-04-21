@@ -16,9 +16,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import sacoba.servidor.beans.Notificacion;
-import sacoba.servidor.beans.Persona;
-import sacoba.servidor.estructuras.NodoColaSecuencias;
+import proyectocine.POJO.Notificacion;
 
 /**
  *
@@ -63,14 +61,21 @@ public class ClienteServidor extends Thread {
                 String[] datos = entrada.split(";"); // Divide los datos de la entrada en cada ';'
 
                 switch (Notificacion.convertirValor(Integer.parseInt(datos[0]))) {
-                    case ENTRA_USUARIO:
-                        recibirUsuario(datos);
+                    case CREA_USUARIO:
                         break;
-                    case LIBERAR_CAJA:
-                        liberarCaja(datos);
+                    case INICIA_SESION:
                         break;
-                    case CREAR_USUARIO:
-                        crearUsuario(datos);
+                    case PEDIR_RESERVACIONES:
+                        break;
+                    case ELIMINA_RESERVACION:
+                        break;
+                    case PEDIR_PELICULA:
+                        break;
+                    case PEDIR_HORARIOS:
+                        break;
+                    case PEDIR_COMIDA:
+                        break;
+                    case CREAR_RESERVACION:
                         break;
                     default:
                         throw new AssertionError(Notificacion.convertirValor(Integer.parseInt(datos[0])).name());

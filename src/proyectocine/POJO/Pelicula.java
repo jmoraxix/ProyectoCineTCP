@@ -8,6 +8,8 @@
  */
 package proyectocine.POJO;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ulacit
@@ -20,6 +22,7 @@ public class Pelicula {
     private int duracion;
     private Genero genero;
     private Clasificacion clasificacion;
+    private ArrayList<Tanda> tandas = new ArrayList<>();
 
     //Constructor
     public Pelicula(int ID, String titulo, int duracion, Genero genero, Clasificacion clasificacion) {
@@ -70,4 +73,14 @@ public class Pelicula {
     public void setClasificacion(Clasificacion clasificacion) {
         this.clasificacion = clasificacion;
     }
+
+    public ArrayList<Tanda> getTandas() {
+        return tandas;
+    }
+
+    public void addTanda(Tanda tanda) {
+        this.tandas.add(tanda);
+    }
+    
+    
 }
