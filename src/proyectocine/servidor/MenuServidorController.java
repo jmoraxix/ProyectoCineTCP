@@ -20,7 +20,7 @@ import javafx.scene.input.MouseEvent;
  *
  * @author jmora
  */
-public class MenuServidorFXMLController implements Initializable {
+public class MenuServidorController implements Initializable {
 
     @FXML
     private ImageView btnPeliculas;
@@ -30,6 +30,12 @@ public class MenuServidorFXMLController implements Initializable {
     private ImageView btnComida;
     @FXML
     private ImageView btnReservaciones;
+
+    private MainServidor application;
+
+    public void setApp(MainServidor application) {
+        this.application = application;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
