@@ -6,7 +6,7 @@
  * Carlos Rodriguez Otoya
  * 
  */
-package proyectocine.POJO;
+package proyectocine.model;
 
 import java.util.ArrayList;
 

@@ -6,7 +6,7 @@
  * Carlos Rodriguez Otoya
  * 
  */
-package proyectocine.POJO;
+package proyectocine.model;
 
 /**
  *
@@ -32,11 +32,11 @@ public enum Notificacion {
 
     private final int valor;
 
-    private Notificacion(int ID) {
-        this.valor = ID;
+    private Notificacion(int valor) {
+        this.valor = valor;
     }
 
-    public int getID() {
+    public int getValor() {
         return valor;
     }
 

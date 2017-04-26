@@ -10,7 +10,7 @@ package proyectocine.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import java.util.Date;
+import proyectocine.model.Usuario;
 
 /**
  *
@@ -18,13 +18,27 @@ import java.util.Date;
  */
 public class Util {
 
+    //Variables de las ventanas
     public static int WIDTH = 650;
     public static int HEIGHT = 550;
 
-    private static Gson getGson() {
+    //Variables de TCP
+    public static int SERVER_PORT = 2356;
+
+    public static Gson getGson() {
         GsonBuilder gsonBuilder = new GsonBuilder();
 //        gsonBuilder.registerTypeAdapter(Date.class, new DateSerializer());
 //        gsonBuilder.registerTypeAdapter(Date.class, new DateDeserializer());
         return gsonBuilder.create();
     }
+
+    //Variables globales de la aplicación
+    public static Usuario CURRENT_USER = null;
 }
+
+//class DepartmentInstanceCreator implements InstanceCreator<Reservacion> {
+//
+//    public Reservacion createInstance(Type type) {
+//        return new Reservacion();
+//    }
+//}
