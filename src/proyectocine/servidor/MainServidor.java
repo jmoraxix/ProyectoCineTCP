@@ -9,8 +9,11 @@
 package proyectocine.servidor;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,6 +21,7 @@ import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import proyectocine.model.Usuario;
 import proyectocine.util.Util;
 
 /**
@@ -28,6 +32,9 @@ public class MainServidor extends Application {
     private Stage stage;
     private final double WINDOW_WIDTH = Util.WIDTH;
     private final double WINDOW_HEIGHT = Util.HEIGHT;
+
+    //Variables de la aplicacion del servidor.
+    private ArrayList<Usuario> usuarios = new ArrayList<>();
 
     /**
      * @param args the command line arguments
@@ -50,10 +57,38 @@ public class MainServidor extends Application {
         }
     }
 
+    public Usuario getLoggedUser() {
+        return Util.CURRENT_USER;
+    }
+
+    public boolean iniciarSesion(Usuario usuario) {
+        List<Usuario> usuariosEncontrados = usuarios.stream().filter(u -> u.getUsuario().equals(usuario.getUsuario())).collect(Collectors.toList());
+        if (usuariosEncontrados.size() == 1) {
+            Util.CURRENT_USER = usuario;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    void userLogout() {
+//        loggedUser = null;
+//        gotoLogin();
+    }
+
     private void gotoMenu() {
         try {
             MenuServidorController menu = (MenuServidorController) replaceSceneContent("MenuServidor.fxml");
             menu.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(MainServidor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void gotoSalas() {
+        try {
+            SalasController salas = (SalasController) replaceSceneContent("Salas.fxml");
+            salas.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(MainServidor.class.getName()).log(Level.SEVERE, null, ex);
         }

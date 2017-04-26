@@ -46,6 +46,7 @@ public class MenuServidorController implements Initializable {
         btnSalas.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e)
                 -> {
             System.out.println("btnSalas");
+            application.gotoSalas();
         });
         btnComida.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e)
                 -> {

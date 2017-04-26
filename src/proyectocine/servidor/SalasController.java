@@ -43,26 +43,32 @@ public class SalasController implements Initializable {
 
     }
 
+    @FXML
     public void actualizarSalas(ActionEvent event) {
 
     }
 
+    @FXML
     public void agregarCapacidadASala(ActionEvent event) {
 
     }
 
+    @FXML
     public void quitarCapacidadASala(ActionEvent event) {
 
     }
 
+    @FXML
     public void guardarSala(ActionEvent event) {
 
     }
 
+    @FXML
     public void agregarSala(ActionEvent event) {
 
     }
 
+    @FXML
     public void eliminarSala(ActionEvent event) {
 
     }

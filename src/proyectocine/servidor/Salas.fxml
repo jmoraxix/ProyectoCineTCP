@@ -53,7 +53,7 @@
                     </image>
                 </ImageView>
                 <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="30.0" prefWidth="80.0" stylesheets="@servidorfxml.css" text="Sala:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                <ComboBox fx:id="cmbSalas" disable="true" onAction="#actualizarSalas" prefHeight="27.0" prefWidth="171.0" styleClass="texto" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                <ComboBox fx:id="cmbSalas" disable="true" onMouseReleased="#actualizarSalas" prefHeight="27.0" prefWidth="171.0" styleClass="texto" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4" />
                 <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="30.0" prefWidth="80.0" stylesheets="@servidorfxml.css" text="N. Sala:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                 <Label fx:id="lblNumSala" alignment="CENTER_RIGHT" contentDisplay="CENTER" disable="true" prefHeight="30.0" prefWidth="80.0" styleClass="texto" stylesheets="@servidorfxml.css" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                 <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="30.0" prefWidth="85.0" stylesheets="@servidorfxml.css" text="Capacidad:" GridPane.columnIndex="1" GridPane.rowIndex="6" />
