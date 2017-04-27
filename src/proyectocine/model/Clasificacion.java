@@ -18,7 +18,7 @@ public enum Clasificacion {
     E12("Mayores de 12 años"),
     E14("Mayores de 14 años"),
     E18("Mayores de 18 años");
-    
+
     private final String clasificacion;
 
     private Clasificacion(String clasificacion) {

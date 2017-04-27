@@ -15,9 +15,8 @@ import java.util.ArrayList;
  * @author ulacit
  */
 public class Pelicula {
-    
+
     //Variables
-    private int ID;
     private String titulo;
     private int duracion;
     private Genero genero;
@@ -25,8 +24,7 @@ public class Pelicula {
     private ArrayList<Tanda> tandas = new ArrayList<>();
 
     //Constructor
-    public Pelicula(int ID, String titulo, int duracion, Genero genero, Clasificacion clasificacion) {
-        this.ID = ID;
+    public Pelicula(String titulo, int duracion, Genero genero, Clasificacion clasificacion) {
         this.titulo = titulo;
         this.duracion = duracion;
         this.genero = genero;
@@ -34,14 +32,6 @@ public class Pelicula {
     }
 
     //Getters & setters
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
-
     public String getTitulo() {
         return titulo;
     }
@@ -81,6 +71,5 @@ public class Pelicula {
     public void addTanda(Tanda tanda) {
         this.tandas.add(tanda);
     }
-    
-    
+
 }

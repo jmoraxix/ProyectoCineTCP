@@ -8,20 +8,18 @@
  */
 package proyectocine.model;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
 /**
  *
  * @author jdmoralo
  */
 public class Tanda {
+
     private Sala sala;
-    private LocalTime time;
-    private LocalDate date;
+    private String time;
+    private String date;
     //LocalTime time = LocalTime.parse("10:15:30");
 
-    public Tanda(Sala sala, LocalTime time, LocalDate date) {
+    public Tanda(Sala sala, String time, String date) {
         this.sala = sala;
         this.time = time;
         this.date = date;
@@ -35,28 +33,27 @@ public class Tanda {
         this.sala = sala;
     }
 
-    public LocalTime getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(LocalTime time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
     @Override
     public String toString() {
-        return "Sala: " + sala  + "/n"
+        return "Sala: " + sala + "/n"
                 + "Fecha: " + date + "/n"
                 + "Hora: " + time;
     }
-    
-    
+
 }

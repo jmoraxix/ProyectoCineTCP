@@ -20,7 +20,7 @@ public enum Genero {
     AVENTURA("Aventura"),
     ANIMADO("Animado"),
     ROMANTICO("Romantico");
-    
+
     private final String titulo;
 
     private Genero(final String titulo) {
@@ -31,5 +31,4 @@ public enum Genero {
     public String toString() {
         return titulo;
     }
-    
 }
