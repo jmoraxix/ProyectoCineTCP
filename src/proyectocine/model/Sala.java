@@ -13,7 +13,7 @@ package proyectocine.model;
  * @author ulacit
  */
 public class Sala {
-    
+
     //Variables
     private int iD;
     private int capacidad;
@@ -40,4 +40,10 @@ public class Sala {
     public void setCapacidad(int capacidad) {
         this.capacidad = capacidad;
     }
+
+    @Override
+    public String toString() {
+        return "Sala: " + "\n\tID: " + iD + "\n\tCapacidad: " + capacidad + "\n";
+    }
+
 }

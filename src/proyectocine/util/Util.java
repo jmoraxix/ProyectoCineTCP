@@ -10,6 +10,11 @@ package proyectocine.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import proyectocine.model.Pelicula;
+import proyectocine.model.Sala;
 import proyectocine.model.Usuario;
 
 /**
@@ -24,6 +29,7 @@ public class Util {
 
     //Variables de TCP
     public static int SERVER_PORT = 2356;
+    public static String SERVER_IP = "localhost";
 
     public static Gson getGson() {
         GsonBuilder gsonBuilder = new GsonBuilder();
@@ -34,6 +40,28 @@ public class Util {
 
     //Variables globales de la aplicación
     public static Usuario CURRENT_USER = null;
+    public static ArrayList<Usuario> LISTA_USURIOS = new ArrayList<>();
+    public static ArrayList<Pelicula> LISTA_PELICULAS = new ArrayList<>();
+    public static ObservableList<Sala> LISTA_SALAS = FXCollections.observableArrayList();
+
+    public static ObservableList<Sala> getSalas() {
+        Util.LISTA_SALAS.add(new Sala(1, 50));
+        Util.LISTA_SALAS.add(new Sala(2, 50));
+        Util.LISTA_SALAS.add(new Sala(3, 75));
+        Util.LISTA_SALAS.add(new Sala(4, 255));
+
+        return Util.LISTA_SALAS;
+    }
+
+    public static ObservableList<String> getIDsSalas() {
+        ObservableList<String> salas = FXCollections.observableArrayList();
+
+        getSalas().forEach(sala -> salas.add(String.valueOf(sala.getiD())));
+
+        System.out.println(salas);
+        return salas;
+    }
+
 }
 
 //class DepartmentInstanceCreator implements InstanceCreator<Reservacion> {

@@ -8,6 +8,10 @@
  */
 package proyectocine.model;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  *
  * @author ulacit
@@ -23,6 +27,11 @@ public enum Clasificacion {
 
     private Clasificacion(String clasificacion) {
         this.clasificacion = clasificacion;
+    }
+
+    public static Clasificacion getClasificacion(String strClasificacion) {
+        List<Clasificacion> listaClasificaciones = Arrays.asList(Clasificacion.values());
+        return listaClasificaciones.stream().filter(g -> strClasificacion.equals(g.toString())).collect(Collectors.toList()).get(0);
     }
 
     @Override
