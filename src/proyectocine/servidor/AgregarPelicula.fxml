@@ -63,13 +63,13 @@
                 <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="30.0" prefWidth="176.0" stylesheets="@servidorfxml.css" text="Clasificación:" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="5" />
                 <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="30.0" prefWidth="85.0" stylesheets="@servidorfxml.css" text="Duración:" GridPane.columnIndex="4" GridPane.rowIndex="4" />
                 <Button fx:id="btnAgregarTanda" mnemonicParsing="false" onAction="#agregarTanda" prefHeight="27.0" prefWidth="171.0" text="Agregar tanda" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="6" />
-                <ComboBox fx:id="cmbGenero" prefWidth="188.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <ComboBox fx:id="cmbGenero" prefHeight="27.0" prefWidth="165.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5" />
                 <ComboBox fx:id="cmbClasificacion" prefHeight="27.0" prefWidth="133.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="5" />
                 <TextField fx:id="txtTitulo" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4" />
                 <TextField fx:id="txtDuracion" GridPane.columnIndex="5" GridPane.rowIndex="4" />
             <ScrollPane hbarPolicy="NEVER" prefHeight="79.0" prefWidth="272.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="7" GridPane.rowSpan="3">
                <content>
-                  <TableView fx:id="tablaTandas" prefHeight="200.0" prefWidth="272.0">
+                  <TableView fx:id="tablaTandas" editable="true" prefHeight="200.0" prefWidth="272.0">
                     <columns>
                       <TableColumn fx:id="colSala" prefWidth="75.0" text="Sala" />
                       <TableColumn fx:id="colDia" prefWidth="75.0" text="Dia" />
@@ -79,11 +79,6 @@
                </content>
             </ScrollPane>
             <Button mnemonicParsing="false" onAction="#cancelarPelicula" prefHeight="27.0" prefWidth="171.0" styleClass="btnSalaRemove" text="Cancelar" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="10" />
-            <TextField fx:id="txtSala" prefHeight="27.0" prefWidth="75.0" promptText="Sala" GridPane.columnIndex="1" GridPane.rowIndex="6">
-               <GridPane.margin>
-                  <Insets left="5.0" right="5.0" />
-               </GridPane.margin>
-            </TextField>
             <TextField fx:id="txtDia" prefHeight="27.0" prefWidth="75.0" promptText="Día" GridPane.columnIndex="2" GridPane.rowIndex="6">
                <GridPane.margin>
                   <Insets left="5.0" right="5.0" />
@@ -94,6 +89,11 @@
                   <Insets left="5.0" right="5.0" />
                </GridPane.margin>
             </TextField>
+            <ComboBox fx:id="cmbSalas" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <opaqueInsets>
+                  <Insets left="5.0" right="5.0" />
+               </opaqueInsets>
+            </ComboBox>
             </children>
         </GridPane>
     </children>

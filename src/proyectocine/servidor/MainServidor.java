@@ -20,6 +20,9 @@ import javafx.fxml.Initializable;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import proyectocine.model.Usuario;
 import proyectocine.util.Util;
@@ -34,6 +37,7 @@ public class MainServidor extends Application {
     private final double WINDOW_HEIGHT = Util.HEIGHT;
 
     //Variables de la aplicacion del servidor.
+    Servidor servidor;
     private ArrayList<Usuario> usuarios = new ArrayList<>();
 
     /**
@@ -55,6 +59,9 @@ public class MainServidor extends Application {
         } catch (Exception ex) {
             Logger.getLogger(MainServidor.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        servidor = new Servidor();
+        servidor.start();
     }
 
     public Usuario getLoggedUser() {
@@ -76,7 +83,7 @@ public class MainServidor extends Application {
 //        gotoLogin();
     }
 
-    private void gotoMenu() {
+    public void gotoMenu() {
         try {
             MenuServidorController menu = (MenuServidorController) replaceSceneContent("MenuServidor.fxml");
             menu.setApp(this);
@@ -127,5 +134,16 @@ public class MainServidor extends Application {
         stage.setScene(scene);
         stage.sizeToScene();
         return (Initializable) loader.getController();
+    }
+
+    protected void showNotification() {
+        final Stage dialog = new Stage();
+        dialog.initModality(Modality.APPLICATION_MODAL);
+        dialog.initOwner(stage);
+        VBox dialogVbox = new VBox(20);
+        dialogVbox.getChildren().add(new Text("This is a Dialog"));
+        Scene dialogScene = new Scene(dialogVbox, 300, 200);
+        dialog.setScene(dialogScene);
+        dialog.show();
     }
 }

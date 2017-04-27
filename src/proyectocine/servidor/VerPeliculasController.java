@@ -48,6 +48,11 @@ public class VerPeliculasController implements Initializable {
     }
 
     @FXML
+    public void goBack(ActionEvent event) {
+        application.gotoMenu();
+    }
+
+    @FXML
     public void agregarPelicula(ActionEvent event) {
         application.gotoAgregarPelicula();
     }
