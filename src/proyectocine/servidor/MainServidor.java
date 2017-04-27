@@ -85,6 +85,24 @@ public class MainServidor extends Application {
         }
     }
 
+    public void gotoPeliculas() {
+        try {
+            VerPeliculasController peliculas = (VerPeliculasController) replaceSceneContent("VerPeliculas.fxml");
+            peliculas.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(MainServidor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void gotoAgregarPelicula() {
+        try {
+            AgregarPeliculaController agregarPelicula = (AgregarPeliculaController) replaceSceneContent("AgregarPelicula.fxml");
+            agregarPelicula.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(MainServidor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public void gotoSalas() {
         try {
             SalasController salas = (SalasController) replaceSceneContent("Salas.fxml");
