@@ -12,7 +12,6 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,7 +25,7 @@ import proyectocine.util.Util;
  */
 public class Cliente extends Thread {
 
-    protected static String SERVER_IP;
+    protected static String SERVER_IP = Util.SERVER_IP;
     protected static int SERVER_PORT = 2356;
     protected ObjectOutputStream out;
     protected ObjectInputStream in;
@@ -44,12 +43,8 @@ public class Cliente extends Thread {
         this.application = application;
 
         try {
-            System.out.println(SERVER_IP);
-            if (SERVER_IP.equals("localhost")) {
-                socket = new Socket(InetAddress.getLocalHost(), SERVER_PORT);
-            } else {
-                socket = new Socket(SERVER_IP, SERVER_PORT);
-            }
+            System.out.println("Conecting to: " + SERVER_IP + ":" + SERVER_PORT);
+            socket = new Socket(SERVER_IP, SERVER_PORT);
             createStream();
 
         } catch (IOException ex) {
@@ -112,6 +107,18 @@ public class Cliente extends Thread {
             System.out.println("Creando usuario");
             System.out.println(gson.toJson(usuario));
             out.writeUTF(Notificacion.CREA_USUARIO.getValor() + ";" + gson.toJson(usuario));
+            out.flush();
+        } catch (IOException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void pedirPeliculas() {
+        Gson gson = Util.getGson();
+
+        try {
+            System.out.println("Pidiendo peliculas");
+            out.writeUTF(Notificacion.PEDIR_PELICULA.getValor() + ";");
             out.flush();
         } catch (IOException ex) {
             Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);

@@ -57,10 +57,19 @@ public class MainCliente extends Application {
         this.cliente.start();
     }
 
-    private void gotoMenu() {
+    public void gotoMenu() {
         try {
             MenuClienteController menu = (MenuClienteController) replaceSceneContent("MenuCliente.fxml");
             menu.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(MainCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void gotoVerPeliculas() {
+        try {
+            VerPeliculasController verPeliculas = (VerPeliculasController) replaceSceneContent("VerPeliculas.fxml");
+            verPeliculas.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(MainCliente.class.getName()).log(Level.SEVERE, null, ex);
         }

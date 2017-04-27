@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -23,8 +24,6 @@ public class MenuClienteController implements Initializable {
 
     @FXML
     private ImageView btnPeliculas;
-    @FXML
-    private ImageView btnSalas;
     @FXML
     private ImageView btnComida;
     @FXML
@@ -38,7 +37,19 @@ public class MenuClienteController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        btnPeliculas.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e)
+                -> {
+            System.out.println("btnPeliculas");
+            application.gotoVerPeliculas();
+        });
+        btnComida.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e)
+                -> {
+            System.out.println("btnComida");
+        });
+        btnReservaciones.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e)
+                -> {
+            System.out.println("btnReservaciones");
+        });
     }
 
 }
